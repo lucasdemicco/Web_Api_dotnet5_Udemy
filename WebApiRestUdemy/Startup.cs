@@ -36,6 +36,8 @@ namespace WebApiRestUdemy
 
             services.AddDbContext<DataContext>(options =>
                 options.UseMySql(connection,ServerVersion.AutoDetect(connection)));
+
+            services.AddApiVersioning();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

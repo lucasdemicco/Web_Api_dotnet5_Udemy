@@ -7,7 +7,8 @@ using WebApiRestUdemy.Services.Implementation;
 
 namespace WebApiRestUdemy.Controllers
 {
-    [Route("api/[controller]")]
+    [ApiVersion("1")]
+    [Route("api/[controller]/v{version:apiVersion}")]
     [ApiController]
     public class PersonController : ControllerBase
     {
