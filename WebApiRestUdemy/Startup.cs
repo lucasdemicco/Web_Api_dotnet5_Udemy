@@ -37,6 +37,7 @@ namespace WebApiRestUdemy
             services.AddDbContext<DataContext>(options =>
                 options.UseMySql(connection,ServerVersion.AutoDetect(connection)));
 
+
             services.AddApiVersioning();
         }
 
