@@ -60,3 +60,5 @@ C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\WebApi
 C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\WebApiRestUdemy\obj\Debug\net5.0\WebApiRestUdemy.RazorTargetAssemblyInfo.cache
 C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\WebApiRestUdemy\obj\Debug\net5.0\WebApiRestUdemy.csproj.CopyComplete
 C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\WebApiRestUdemy\obj\Debug\net5.0\WebApiRestUdemy.genruntimeconfig.cache
+C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\WebApiRestUdemy\bin\Debug\net5.0\Humanizer.dll
+C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\WebApiRestUdemy\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
