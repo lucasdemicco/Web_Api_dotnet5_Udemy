@@ -19,9 +19,9 @@ namespace WebApiRestUdemy.Migrations
 
             modelBuilder.Entity("WebApiRestUdemy.Model.Book", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
+                        .HasColumnType("bigint")
                         .HasColumnName("id");
 
                     b.Property<string>("Author")

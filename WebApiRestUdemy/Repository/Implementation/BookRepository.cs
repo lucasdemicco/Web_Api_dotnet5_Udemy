@@ -44,7 +44,7 @@ namespace WebApiRestUdemy.Repository.Implementation
         public Book Update(Book book)
         {
             if (!Exists(book.Id)) return new Book();
-            var result = _context.Persons.SingleOrDefault(p => p.Id.Equals(book.Id));
+            var result = _context.Books.SingleOrDefault(p => p.Id.Equals(book.Id));
             if (result != null)
             {
                 try
@@ -80,7 +80,7 @@ namespace WebApiRestUdemy.Repository.Implementation
 
         public bool Exists(long id)
         {
-            _context.Persons.SingleOrDefault(p => p.Id.Equals(id));
+            _context.Books.SingleOrDefault(b => b.Id.Equals(id));
             return true;
         }
     }

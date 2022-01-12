@@ -7,7 +7,7 @@ namespace WebApiRestUdemy.Controllers
 {
     [ApiVersion("1")]
     [ApiController]
-    [Route("/api/[controller]/v{version:apiVesion}")]
+    [Route("/api/[controller]/v{version:apiVersion}")]
     public class BooksController : ControllerBase
     {
         private readonly IBookRepository _repository;
@@ -35,7 +35,7 @@ namespace WebApiRestUdemy.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(Book book)
+        public IActionResult CreateBook(Book book)
         {
             if (!ModelState.IsValid) return BadRequest();
 
@@ -43,7 +43,7 @@ namespace WebApiRestUdemy.Controllers
         }
 
         [HttpPut]
-        public IActionResult Update(Book book)
+        public IActionResult UpdateBook(Book book)
         {
             if (!ModelState.IsValid) return BadRequest();
 
@@ -51,9 +51,9 @@ namespace WebApiRestUdemy.Controllers
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Delete(long id)
+        public IActionResult DeleteBook(long id)
         {
-            if (!ModelState.IsValid) return BadRequest();
+            if (!ModelState.IsValid) return StatusCode(404, "Books is not found!");
 
             _repository.Delete(id);
 

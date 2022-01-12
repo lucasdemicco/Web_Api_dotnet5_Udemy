@@ -9,7 +9,7 @@ using WebApiRestUdemy.Data;
 namespace WebApiRestUdemy.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20220112143401_Initial")]
+    [Migration("20220112145336_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,9 +21,9 @@ namespace WebApiRestUdemy.Migrations
 
             modelBuilder.Entity("WebApiRestUdemy.Model.Book", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
+                        .HasColumnType("bigint")
                         .HasColumnName("id");
 
                     b.Property<string>("Author")

@@ -29,6 +29,9 @@ namespace WebApiRestUdemy
             services.AddScoped<IPersonBLL, PersonBLL>();
             services.AddScoped<IPersonRepository, PersonRepository>();
 
+            services.AddScoped<IBookBLL, BookBLL>();
+            services.AddScoped<IBookRepository, BookRepository>();
+
             services.AddDbContext<DataContext>(options =>
                 options.UseMySql(connection,ServerVersion.AutoDetect(connection)));
 
