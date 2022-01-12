@@ -14,5 +14,7 @@ namespace WebApiRestUdemy.Repository.Implementation
         Person Update(Person person);
 
         void Delete(long id);
+
+        bool Exists(long id);
     }
 }

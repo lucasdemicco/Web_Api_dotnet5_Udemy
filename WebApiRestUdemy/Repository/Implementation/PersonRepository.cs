@@ -81,7 +81,7 @@ namespace WebApiRestUdemy.BLL.Implementation
             }
         }
 
-        private bool Exists(long id)
+        public bool Exists(long id)
         {
             _context.Persons.SingleOrDefault(p => p.Id.Equals(id));
             return true;
