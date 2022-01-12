@@ -9,5 +9,6 @@ namespace WebApiRestUdemy.Data
         public DataContext(DbContextOptions<DataContext> options) : base(options) { }
 
         public DbSet<Person> Persons { get; set; }
+        public DbSet<Book> Books { get; set; }
     }
 }
