@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using WebApiRestUdemy.BLL.Implementation;
-using WebApiRestUdemy.Model;
-using WebApiRestUdemy.Repository.Implementation;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using WebApiRestUdemy.Data.VO;
+using WebApiRestUdemy.Repository;
 
 namespace WebApiRestUdemy.Controllers
 {
@@ -11,53 +13,59 @@ namespace WebApiRestUdemy.Controllers
     public class PersonController : ControllerBase
     {
 
-        private readonly IRepository<Person> _person;
+        private readonly IPersonRepository _repo;
 
-        public PersonController(IRepository<Person> person)
+        public PersonController(IPersonRepository repo)
         {
-            _person = person;
+            _repo = repo ?? throw new ArgumentNullException(nameof(repo));
         }
 
-        [HttpGet]
-        public IActionResult GetAllPerson()
-        {
-            if (!ModelState.IsValid) return StatusCode(404, "Person is not found!");
 
-            return Ok(_person.FindAll());
+        [HttpGet]
+        public async Task<ActionResult<PersonVO>> FindAllBooks()
+        {
+            if (!ModelState.IsValid)
+                return StatusCode(404, "Books not found!");
+
+            var persons = await _repo.FindAllPerson();
+            return Ok(persons);
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetPersonById(long id)
+        public async Task<ActionResult<PersonVO>> FindById(long id)
         {
-            if (!ModelState.IsValid) return StatusCode(404, "Person is not found!");
+            if (!ModelState.IsValid)
+                return StatusCode(404, "Books not found!");
 
-            return Ok(_person.FindById(id));
+            var person = await _repo.FindById(id);
+            return Ok(person);
         }
 
         [HttpPost]
-        public IActionResult CreateNewPerson(Person person)
+        public async Task<ActionResult<PersonVO>> CreateBook(PersonVO vo)
         {
             if (!ModelState.IsValid) return BadRequest();
 
-            return Ok(_person.Create(person));
+            var personCreate = await _repo.Create(vo);
+            return Ok(personCreate);
         }
 
         [HttpPut]
-        public IActionResult UpdatePerson(Person person)
+        public async Task<ActionResult<PersonVO>> UpdateBook(PersonVO vo)
         {
-            if (person is null) return BadRequest();
+            if (!ModelState.IsValid) return BadRequest();
 
-            return Ok(_person.Update(person));
+            var personUpdate = await _repo.Update(vo);
+            return Ok(personUpdate);
         }
 
         [HttpDelete("{id}")]
-        public IActionResult DeletePerson(long id)
+        public async Task<ActionResult> DeleteBook(long id)
         {
-            if (!ModelState.IsValid) return StatusCode(404, "Person is not found!");
+            var status = await _repo.Delete(id);
+            if (status is false) return StatusCode(404, "Books is not found!");
 
-            _person.Delete(id);
-
-            return NoContent();
+            return Ok(status);
         }
     }
 }

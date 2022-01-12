@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Threading.Tasks;
 using WebApiRestUdemy.Data.VO;
 using WebApiRestUdemy.Model;
-using WebApiRestUdemy.Repository.Implementation;
+using WebApiRestUdemy.Repository;
 
 namespace WebApiRestUdemy.Controllers
 {
@@ -10,54 +12,103 @@ namespace WebApiRestUdemy.Controllers
     [Route("/api/[controller]/v{version:apiVersion}")]
     public class BooksController : ControllerBase
     {
-        private readonly IRepository<Book> _repository;
-        public BooksController(IRepository<Book> repository)
+        private readonly IBookRepository _repo;
+        public BooksController(IBookRepository repo)
         { 
-            _repository = repository;
+            _repo = repo ?? throw new ArgumentNullException(nameof(repo));
         }
 
         [HttpGet]
-        public IActionResult FindAllBooks()
+        public async Task<ActionResult<BookVO>> FindAllBooks()
         {
             if (!ModelState.IsValid)
                 return StatusCode(404, "Books not found!");
 
-            return Ok(_repository.FindAll());
+            var books = await _repo.FindAllBooks();
+            return Ok(books);
         }
 
         [HttpGet("{id}")]
-        public IActionResult FindById(long id)
+        public async Task<ActionResult<BookVO>> FindById(long id)
         {
             if (!ModelState.IsValid)
                 return StatusCode(404, "Books not found!");
 
-            return Ok(_repository.FindById(id));
+            var book = await _repo.FindById(id);
+            return Ok(book);
         }
 
         [HttpPost]
-        public IActionResult CreateBook(Book book)
+        public async Task<ActionResult<BookVO>> CreateBook(BookVO vo)
         {
             if (!ModelState.IsValid) return BadRequest();
 
-            return Ok(_repository.Create(book));
+            var bookCreate = await _repo.Create(vo);
+            return Ok(bookCreate);
         }
 
         [HttpPut]
-        public IActionResult UpdateBook(Book book)
+        public async Task<ActionResult<BookVO>> UpdateBook(BookVO vo)
         {
             if (!ModelState.IsValid) return BadRequest();
 
-            return Ok(_repository.Update(book));
+            var bookUpdate = await _repo.Update(vo);
+            return Ok(bookUpdate);
         }
 
         [HttpDelete("{id}")]
-        public IActionResult DeleteBook(long id)
+        public async Task<ActionResult> DeleteBook(long id)
         {
-            if (!ModelState.IsValid) return StatusCode(404, "Books is not found!");
+            var status = await _repo.Delete(id);
+            if (status is false) return StatusCode(404, "Books is not found!");
 
-            _repository.Delete(id);
+            return Ok(status);
+        }
+        [HttpGet]
+        public async Task<ActionResult<BookVO>> FindAllBooks()
+        {
+            if (!ModelState.IsValid)
+                return StatusCode(404, "Books not found!");
 
-            return NoContent();
+            var books = await _repo.FindAllBooks();
+            return Ok(books);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<BookVO>> FindById(long id)
+        {
+            if (!ModelState.IsValid)
+                return StatusCode(404, "Books not found!");
+
+            var book = await _repo.FindById(id);
+            return Ok(book);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<BookVO>> CreateBook(BookVO vo)
+        {
+            if (!ModelState.IsValid) return BadRequest();
+
+            var bookCreate = await _repo.Create(vo);
+            return Ok(bookCreate);
+        }
+
+        [HttpPut]
+        public async Task<ActionResult<BookVO>> UpdateBook(BookVO vo)
+        {
+            if (!ModelState.IsValid) return BadRequest();
+
+            var bookCreate = await _repo.Update(vo);
+            return Ok(bookCreate);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeleteBook(long id)
+        {
+            var status = await _repo.Delete(id);
+            if (status is false) return StatusCode(404, "Books is not found!");
+
+            return Ok(status);
         }
     }
 }

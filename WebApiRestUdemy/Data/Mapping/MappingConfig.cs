@@ -12,6 +12,9 @@ namespace WebApiRestUdemy.Data.Mapping
             {
                 config.CreateMap<PersonVO, Person>();
                 config.CreateMap<Person, PersonVO>();
+
+                config.CreateMap<BookVO, Book>();
+                config.CreateMap<Book, BookVO>();
             });
 
             return mappingConfig;
