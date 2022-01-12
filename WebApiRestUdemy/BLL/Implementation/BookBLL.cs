@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using WebApiRestUdemy.Data.Converter.Implementation;
+using WebApiRestUdemy.Data.VO;
 using WebApiRestUdemy.Model;
 using WebApiRestUdemy.Repository.Implementation;
 
@@ -8,30 +10,36 @@ namespace WebApiRestUdemy.BLL.Implementation
     {
 
         private readonly IRepository<Book> _repository;
+        private readonly BookConverter _converter;
 
         public BookBLL(IRepository<Book> repository)
         {
             _repository = repository;
+            _converter = new BookConverter();
         }
 
-        public List<Book> FindAllBooks()
+        public List<BookVO> FindAllBooks()
         {
-            return _repository.FindAll();
+            return _converter.Parse(_repository.FindAll());
         }
 
-        public Book FindById(long id)
+        public BookVO FindById(long id)
         {
-            return _repository.FindById(id);
+            return _converter.Parse(_repository.FindById(id));
         }
 
-        public Book Create(Book book)
+        public BookVO Create(BookVO book)
         {
-            return _repository.Create(book);
+            var bookEntity = _converter.Parse(book);
+            bookEntity = _repository.Create(bookEntity);
+            return _converter.Parse(bookEntity);
         }
 
-        public Book Update(Book book)
+        public BookVO Update(BookVO book)
         {
-            return _repository.Update(book);
+            var bookEntity = _converter.Parse(book);
+            bookEntity = _repository.Update(bookEntity);
+            return _converter.Parse(bookEntity);
         }
 
         public void Delete(long id)

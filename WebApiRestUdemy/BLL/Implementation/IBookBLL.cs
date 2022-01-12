@@ -1,17 +1,18 @@
 ﻿using System.Collections.Generic;
+using WebApiRestUdemy.Data.VO;
 using WebApiRestUdemy.Model;
 
 namespace WebApiRestUdemy.BLL.Implementation
 {
     public interface IBookBLL
     {
-        List<Book> FindAllBooks();
+        List<BookVO> FindAllBooks();
 
-        Book FindById(long id);
+        BookVO FindById(long id);
 
-        Book Create(Book book);
+        BookVO Create(BookVO book);
 
-        Book Update(Book book);
+        BookVO Update(BookVO book);
 
         void Delete(long id);
     }

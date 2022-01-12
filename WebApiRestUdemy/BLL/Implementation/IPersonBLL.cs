@@ -1,17 +1,18 @@
 ﻿using System.Collections.Generic;
+using WebApiRestUdemy.Data.VO;
 using WebApiRestUdemy.Model;
 
 namespace WebApiRestUdemy.BLL.Implementation
 {
     public interface IPersonBLL
     {
-        List<Person> FindAll();
+        List<PersonVO> FindAll();
 
-        Person FindById(long id);
+        PersonVO FindById(long id);
 
-        Person Create(Person person);
+        PersonVO Create(PersonVO person);
 
-        Person Update(Person person);
+        PersonVO Update(PersonVO person);
 
         void Delete(long id);
     }
