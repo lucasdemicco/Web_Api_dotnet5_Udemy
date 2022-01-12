@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WebApiRestUdemy.BLL.Implementation;
 using WebApiRestUdemy.Model;
+using WebApiRestUdemy.Repository.Implementation;
 
 namespace WebApiRestUdemy.Controllers
 {
@@ -10,9 +11,9 @@ namespace WebApiRestUdemy.Controllers
     public class PersonController : ControllerBase
     {
 
-        private readonly IPersonBLL _person;
+        private readonly IRepository<Person> _person;
 
-        public PersonController(IPersonBLL person)
+        public PersonController(IRepository<Person> person)
         {
             _person = person;
         }

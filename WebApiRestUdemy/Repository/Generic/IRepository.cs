@@ -1,17 +1,18 @@
 ﻿using System.Collections.Generic;
 using WebApiRestUdemy.Model;
+using WebApiRestUdemy.Model.Base;
 
 namespace WebApiRestUdemy.Repository.Implementation
 {
-    public interface IPersonRepository
+    public interface IRepository<T> where T : BaseEntity
     {
-        List<Person> FindAll();
+        List<T> FindAll();
 
-        Person FindById(long id);
+        T FindById(long id);
 
-        Person Create(Person person);
+        T Create(T item);
 
-        Person Update(Person person);
+        T Update(T item);
 
         void Delete(long id);
 

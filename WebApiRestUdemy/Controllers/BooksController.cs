@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using WebApiRestUdemy.Model;
+using WebApiRestUdemy.Repository.Generic;
 using WebApiRestUdemy.Repository.Implementation;
 
 namespace WebApiRestUdemy.Controllers
@@ -10,8 +11,8 @@ namespace WebApiRestUdemy.Controllers
     [Route("/api/[controller]/v{version:apiVersion}")]
     public class BooksController : ControllerBase
     {
-        private readonly IBookRepository _repository;
-        public BooksController(IBookRepository repository)
+        private readonly IRepository<Book> _repository;
+        public BooksController(IRepository<Book> repository)
         { 
             _repository = repository;
         }
@@ -22,7 +23,7 @@ namespace WebApiRestUdemy.Controllers
             if (!ModelState.IsValid)
                 return StatusCode(404, "Books not found!");
 
-            return Ok(_repository.FindAllBooks());
+            return Ok(_repository.FindAll());
         }
 
         [HttpGet("{id}")]

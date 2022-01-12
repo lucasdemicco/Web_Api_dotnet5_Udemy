@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WebApiRestUdemy.BLL.Implementation;
 using WebApiRestUdemy.Data;
+using WebApiRestUdemy.Repository.Generic;
 using WebApiRestUdemy.Repository.Implementation;
 
 namespace WebApiRestUdemy
@@ -27,10 +28,8 @@ namespace WebApiRestUdemy
             services.AddControllers();
 
             services.AddScoped<IPersonBLL, PersonBLL>();
-            services.AddScoped<IPersonRepository, PersonRepository>();
-
             services.AddScoped<IBookBLL, BookBLL>();
-            services.AddScoped<IBookRepository, BookRepository>();
+            services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
 
             services.AddDbContext<DataContext>(options =>
                 options.UseMySql(connection,ServerVersion.AutoDetect(connection)));

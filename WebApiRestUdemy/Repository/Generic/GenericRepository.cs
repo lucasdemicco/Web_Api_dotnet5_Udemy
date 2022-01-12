@@ -1,37 +1,40 @@
-﻿using System;
+﻿
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using WebApiRestUdemy.Data;
-using WebApiRestUdemy.Model;
+using WebApiRestUdemy.Model.Base;
 using WebApiRestUdemy.Repository.Implementation;
 
-namespace WebApiRestUdemy.BLL.Implementation
+namespace WebApiRestUdemy.Repository.Generic
 {
-    public class PersonRepository : IPersonRepository
+    public class GenericRepository<T> : IRepository<T> where T : BaseEntity
     {
 
         private readonly DataContext _context;
+        private DbSet<T> dataset;
 
-        public PersonRepository(DataContext context)
+        public GenericRepository(DataContext context)
         {
             _context = context;
+            dataset = _context.Set<T>();
         }
 
-        public List<Person> FindAll()
+        public List<T> FindAll()
         {
-            return _context.Persons.ToList();
+            return dataset.ToList();
         }
 
-        public Person FindById(long id)
+        public T FindById(long id)
         {
-            return _context.Persons.SingleOrDefault(p => p.Id.Equals(id));
+            return _context.Set<T>().FirstOrDefault(p => p.Id.Equals(id));
         }
-
-        public Person Create(Person person)
+        public T Create(T item)
         {
             try
             {
-                _context.Add(person);
+                dataset.Add(item);
                 _context.SaveChanges();
             }
             catch (Exception ex)
@@ -39,19 +42,16 @@ namespace WebApiRestUdemy.BLL.Implementation
                 throw ex;
             }
 
-            return person;
+            return item;
         }
-
-        public Person Update(Person person)
+        public T Update(T item)
         {
-            if (!Exists(person.Id)) return new Person();
-
-            var result = _context.Persons.SingleOrDefault(p => p.Id.Equals(person.Id));
+            var result = dataset.SingleOrDefault(p => p.Id.Equals(item.Id));
             if (result != null)
             {
                 try
                 {
-                    _context.Entry(result).CurrentValues.SetValues(person);
+                    _context.Entry(result).CurrentValues.SetValues(item);
                     _context.SaveChanges();
                 }
                 catch (Exception ex)
@@ -59,19 +59,22 @@ namespace WebApiRestUdemy.BLL.Implementation
                     throw ex;
                 }
             }
+            else
+            {
+                return null;
+            }
 
-            return person;
+            return item;
         }
-
 
         public void Delete(long id)
         {
-            var result = _context.Persons.SingleOrDefault(p => p.Id.Equals(id));
+            var result = dataset.SingleOrDefault(p => p.Id.Equals(id));
             if (result != null)
             {
                 try
                 {
-                    _context.Persons.Remove(result);
+                    dataset.Remove(result);
                     _context.SaveChanges();
                 }
                 catch (Exception ex)
@@ -83,9 +86,7 @@ namespace WebApiRestUdemy.BLL.Implementation
 
         public bool Exists(long id)
         {
-            _context.Persons.SingleOrDefault(p => p.Id.Equals(id));
-            return true;
+            return dataset.Any(p => p.Id.Equals(id));
         }
-
     }
 }

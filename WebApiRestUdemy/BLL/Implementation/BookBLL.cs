@@ -7,16 +7,16 @@ namespace WebApiRestUdemy.BLL.Implementation
     public class BookBLL : IBookBLL
     {
 
-        private readonly IBookRepository _repository;
+        private readonly IRepository<Book> _repository;
 
-        public BookBLL(IBookRepository repository)
+        public BookBLL(IRepository<Book> repository)
         {
             _repository = repository;
         }
 
         public List<Book> FindAllBooks()
         {
-            return _repository.FindAllBooks();
+            return _repository.FindAll();
         }
 
         public Book FindById(long id)
