@@ -22,7 +22,7 @@ namespace WebApiRestUdemy.Controllers
 
 
         [HttpGet]
-        public async Task<ActionResult<PersonVO>> FindAllBooks()
+        public async Task<ActionResult<PersonVO>> FindAll()
         {
             if (!ModelState.IsValid)
                 return StatusCode(404, "Books not found!");
@@ -32,7 +32,7 @@ namespace WebApiRestUdemy.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<PersonVO>> FindById(long id)
+        public async Task<ActionResult<PersonVO>> FindPersonById(long id)
         {
             if (!ModelState.IsValid)
                 return StatusCode(404, "Books not found!");
@@ -42,7 +42,7 @@ namespace WebApiRestUdemy.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<PersonVO>> CreateBook(PersonVO vo)
+        public async Task<ActionResult<PersonVO>> CreatePerson(PersonVO vo)
         {
             if (!ModelState.IsValid) return BadRequest();
 
@@ -51,7 +51,7 @@ namespace WebApiRestUdemy.Controllers
         }
 
         [HttpPut]
-        public async Task<ActionResult<PersonVO>> UpdateBook(PersonVO vo)
+        public async Task<ActionResult<PersonVO>> UpdatePerson(PersonVO vo)
         {
             if (!ModelState.IsValid) return BadRequest();
 
@@ -60,7 +60,7 @@ namespace WebApiRestUdemy.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult> DeleteBook(long id)
+        public async Task<ActionResult> DeletePerson(long id)
         {
             var status = await _repo.Delete(id);
             if (status is false) return StatusCode(404, "Books is not found!");

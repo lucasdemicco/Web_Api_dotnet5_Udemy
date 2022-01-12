@@ -19,7 +19,7 @@ namespace WebApiRestUdemy.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<BookVO>> FindAllBooks()
+        public async Task<ActionResult<BookVO>> FindAll()
         {
             if (!ModelState.IsValid)
                 return StatusCode(404, "Books not found!");
@@ -29,7 +29,7 @@ namespace WebApiRestUdemy.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<BookVO>> FindById(long id)
+        public async Task<ActionResult<BookVO>> FindBookById(long id)
         {
             if (!ModelState.IsValid)
                 return StatusCode(404, "Books not found!");
