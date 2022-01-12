@@ -1,11 +1,14 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System;
 using WebApiRestUdemy.BLL.Implementation;
 using WebApiRestUdemy.Data;
+using WebApiRestUdemy.Data.Mapping;
 using WebApiRestUdemy.Repository.Generic;
 using WebApiRestUdemy.Repository.Implementation;
 
@@ -33,6 +36,10 @@ namespace WebApiRestUdemy
 
             services.AddDbContext<DataContext>(options =>
                 options.UseMySql(connection,ServerVersion.AutoDetect(connection)));
+
+            IMapper mapper = MappingConfig.RegisterMaps().CreateMapper();
+            services.AddSingleton(mapper);
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 
             services.AddApiVersioning();

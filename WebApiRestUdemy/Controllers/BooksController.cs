@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
+using WebApiRestUdemy.Data.VO;
 using WebApiRestUdemy.Model;
-using WebApiRestUdemy.Repository.Generic;
 using WebApiRestUdemy.Repository.Implementation;
 
 namespace WebApiRestUdemy.Controllers

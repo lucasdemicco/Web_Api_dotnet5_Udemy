@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "sQF3+aE8HshRrdRv99uO4iu2aJTKxxG3Fj7eAkNzBbv51JzJvODHRBChCkhPSEx1Q/tiN/Aa9UxKVqMTKjrQMQ==",
+  "dgSpecHash": "SyOmsSyrswMXxIP4JzkNdT87RE3RCSRjMr5nyWBeFUpcZjPEjWx1L/1jDszLO8FLNm4lfdf7p43n0tOpRNkFIw==",
   "success": true,
   "projectFilePath": "C:\\Users\\camil\\Desktop\\ProjetoUdemy\\Web_Api_dotnet5_Udemy\\WebApiRestUdemy\\WebApiRestUdemy\\WebApiRestUdemy.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\camil\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\camil\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\camil\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning\\5.0.0\\microsoft.aspnetcore.mvc.versioning.5.0.0.nupkg.sha512",
     "C:\\Users\\camil\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
