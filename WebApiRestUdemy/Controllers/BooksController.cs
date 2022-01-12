@@ -2,7 +2,6 @@
 using System;
 using System.Threading.Tasks;
 using WebApiRestUdemy.Data.VO;
-using WebApiRestUdemy.Model;
 using WebApiRestUdemy.Repository;
 
 namespace WebApiRestUdemy.Controllers
@@ -39,7 +38,7 @@ namespace WebApiRestUdemy.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<BookVO>> CreateBook(BookVO vo)
+        public async Task<ActionResult<BookVO>> CreateNewBook(BookVO vo)
         {
             if (!ModelState.IsValid) return BadRequest();
 
@@ -48,7 +47,7 @@ namespace WebApiRestUdemy.Controllers
         }
 
         [HttpPut]
-        public async Task<ActionResult<BookVO>> UpdateBook(BookVO vo)
+        public async Task<ActionResult<BookVO>> UpdateABook(BookVO vo)
         {
             if (!ModelState.IsValid) return BadRequest();
 
@@ -57,59 +56,14 @@ namespace WebApiRestUdemy.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult> DeleteBook(long id)
+        public async Task<ActionResult> DeleteABook(long id)
         {
             var status = await _repo.Delete(id);
             if (status is false) return StatusCode(404, "Books is not found!");
 
             return Ok(status);
         }
-        [HttpGet]
-        public async Task<ActionResult<BookVO>> FindAllBooks()
-        {
-            if (!ModelState.IsValid)
-                return StatusCode(404, "Books not found!");
-
-            var books = await _repo.FindAllBooks();
-            return Ok(books);
-        }
-
-        [HttpGet("{id}")]
-        public async Task<ActionResult<BookVO>> FindById(long id)
-        {
-            if (!ModelState.IsValid)
-                return StatusCode(404, "Books not found!");
-
-            var book = await _repo.FindById(id);
-            return Ok(book);
-        }
-
-        [HttpPost]
-        public async Task<ActionResult<BookVO>> CreateBook(BookVO vo)
-        {
-            if (!ModelState.IsValid) return BadRequest();
-
-            var bookCreate = await _repo.Create(vo);
-            return Ok(bookCreate);
-        }
-
-        [HttpPut]
-        public async Task<ActionResult<BookVO>> UpdateBook(BookVO vo)
-        {
-            if (!ModelState.IsValid) return BadRequest();
-
-            var bookCreate = await _repo.Update(vo);
-            return Ok(bookCreate);
-        }
-
-        [HttpDelete("{id}")]
-        public async Task<ActionResult> DeleteBook(long id)
-        {
-            var status = await _repo.Delete(id);
-            if (status is false) return StatusCode(404, "Books is not found!");
-
-            return Ok(status);
-        }
+   
     }
 }
 
