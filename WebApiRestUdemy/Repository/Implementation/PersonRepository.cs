@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using WebApiRestUdemy.Data;
 using WebApiRestUdemy.Model;
+using WebApiRestUdemy.Repository.Implementation;
 
-namespace WebApiRestUdemy.Services.Implementation
+namespace WebApiRestUdemy.BLL.Implementation
 {
-    public class PersonRepository : IPersonService
+    public class PersonRepository : IPersonRepository
     {
 
         private readonly DataContext _context;
 
         public PersonRepository(DataContext context)
         {
-                _context = context;
+            _context = context;
         }
 
         public List<Person> FindAll()

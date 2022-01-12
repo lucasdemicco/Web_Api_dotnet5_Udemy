@@ -1,9 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using WebApiRestUdemy.BLL.Implementation;
 using WebApiRestUdemy.Model;
-using WebApiRestUdemy.Services.Implementation;
 
 namespace WebApiRestUdemy.Controllers
 {
@@ -13,9 +10,9 @@ namespace WebApiRestUdemy.Controllers
     public class PersonController : ControllerBase
     {
 
-        private readonly IPersonService _person;
+        private readonly IPersonBLL _person;
 
-        public PersonController(IPersonService person)
+        public PersonController(IPersonBLL person)
         {
             _person = person;
         }

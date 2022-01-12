@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using WebApiRestUdemy.Model;
 
-namespace WebApiRestUdemy.Services.Implementation
+namespace WebApiRestUdemy.Repository.Implementation
 {
-    public interface IPersonService
+    public interface IPersonRepository
     {
         List<Person> FindAll();
 
