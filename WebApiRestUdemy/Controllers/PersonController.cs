@@ -2,6 +2,7 @@
 using System;
 using System.Threading.Tasks;
 using WebApiRestUdemy.Data.VO;
+using WebApiRestUdemy.Hypermedia.Filters;
 using WebApiRestUdemy.Repository;
 
 namespace WebApiRestUdemy.Controllers
@@ -21,6 +22,7 @@ namespace WebApiRestUdemy.Controllers
 
 
         [HttpGet]
+        [TypeFilter(typeof(HyperMediaFilter))]
         public async Task<ActionResult<PersonVO>> FindAll()
         {
             if (!ModelState.IsValid)
@@ -31,6 +33,7 @@ namespace WebApiRestUdemy.Controllers
         }
 
         [HttpGet("{id}")]
+        [TypeFilter(typeof(HyperMediaFilter))]
         public async Task<ActionResult<PersonVO>> FindPersonById(long id)
         {
             if (!ModelState.IsValid)
@@ -41,6 +44,7 @@ namespace WebApiRestUdemy.Controllers
         }
 
         [HttpPost]
+        [TypeFilter(typeof(HyperMediaFilter))]
         public async Task<ActionResult<PersonVO>> CreatePerson(PersonVO vo)
         {
             if (!ModelState.IsValid) return BadRequest();
@@ -50,6 +54,7 @@ namespace WebApiRestUdemy.Controllers
         }
 
         [HttpPut]
+        [TypeFilter(typeof(HyperMediaFilter))]
         public async Task<ActionResult<PersonVO>> UpdatePerson(PersonVO vo)
         {
             if (!ModelState.IsValid) return BadRequest();

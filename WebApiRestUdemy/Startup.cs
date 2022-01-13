@@ -8,6 +8,8 @@ using Microsoft.Extensions.Hosting;
 using System;
 using WebApiRestUdemy.Data;
 using WebApiRestUdemy.Data.Mapping;
+using WebApiRestUdemy.Hypermedia.Enricher;
+using WebApiRestUdemy.Hypermedia.Filters;
 using WebApiRestUdemy.Repository;
 
 namespace WebApiRestUdemy
@@ -37,6 +39,11 @@ namespace WebApiRestUdemy
             IMapper mapper = MappingConfig.RegisterMaps().CreateMapper();
             services.AddSingleton(mapper);
 
+            var filterOptions = new HyperMediaFilterOptions();
+            filterOptions.ContentResponseEnricherList.Add(new PersonEnricher());
+
+            services.AddSingleton(filterOptions);
+
             services.AddApiVersioning();
         }
 
@@ -56,7 +63,7 @@ namespace WebApiRestUdemy
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapControllers(); endpoints.MapControllerRoute("DefaultApi", "{controller=values}/{id?}");
             });
         }
     }

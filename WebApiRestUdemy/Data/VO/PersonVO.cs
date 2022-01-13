@@ -1,9 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using WebApiRestUdemy.Model.Base;
+﻿using System.Collections.Generic;
+using WebApiRestUdemy.Hypermedia;
+using WebApiRestUdemy.Hypermedia.Abstract;
 
 namespace WebApiRestUdemy.Data.VO
 {
-    public class PersonVO
+    public class PersonVO : ISupportHypermedia
     {
         public long Id { get; set; }
 
@@ -14,5 +15,6 @@ namespace WebApiRestUdemy.Data.VO
         public string Address { get; set; }
 
         public string Gender { get; set; }
+        public List<HyperMediaLink> Links { get; set; } = new List<HyperMediaLink>();
     }
 }

@@ -2,6 +2,7 @@
 using System;
 using System.Threading.Tasks;
 using WebApiRestUdemy.Data.VO;
+using WebApiRestUdemy.Hypermedia.Filters;
 using WebApiRestUdemy.Repository;
 
 namespace WebApiRestUdemy.Controllers
@@ -18,6 +19,7 @@ namespace WebApiRestUdemy.Controllers
         }
 
         [HttpGet]
+        [TypeFilter(typeof(HyperMediaFilter))]
         public async Task<ActionResult<BookVO>> FindAll()
         {
             if (!ModelState.IsValid)
@@ -28,6 +30,7 @@ namespace WebApiRestUdemy.Controllers
         }
 
         [HttpGet("{id}")]
+        [TypeFilter(typeof(HyperMediaFilter))]
         public async Task<ActionResult<BookVO>> FindBookById(long id)
         {
             if (!ModelState.IsValid)
@@ -38,6 +41,7 @@ namespace WebApiRestUdemy.Controllers
         }
 
         [HttpPost]
+        [TypeFilter(typeof(HyperMediaFilter))]
         public async Task<ActionResult<BookVO>> CreateNewBook(BookVO vo)
         {
             if (!ModelState.IsValid) return BadRequest();
@@ -47,6 +51,7 @@ namespace WebApiRestUdemy.Controllers
         }
 
         [HttpPut]
+        [TypeFilter(typeof(HyperMediaFilter))]
         public async Task<ActionResult<BookVO>> UpdateABook(BookVO vo)
         {
             if (!ModelState.IsValid) return BadRequest();
