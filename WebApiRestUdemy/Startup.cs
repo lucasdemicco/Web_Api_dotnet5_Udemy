@@ -29,6 +29,16 @@ namespace WebApiRestUdemy
         {
             var connection = Configuration.GetConnectionString("MySqlConnection");
 
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(builder =>
+                {
+                    builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader();
+                });
+            });
+
             services.AddControllers();
 
             services.AddScoped<IPersonRepository, PersonRepository>();
@@ -77,6 +87,8 @@ namespace WebApiRestUdemy
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors();
 
             app.UseSwagger();
 
