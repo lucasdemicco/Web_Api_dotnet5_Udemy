@@ -5,7 +5,7 @@ namespace WebApiRestUdemy.Hypermedia.Abstract
 {
     public interface IResponseEnricher
     {
-        bool CanEnrich(ResultExecutedContext context);
-        Task Enrick(ResultExecutedContext context);
+        bool CanEnrich(ResultExecutingContext context);
+        Task Enrich(ResultExecutingContext context);
     }
 }
