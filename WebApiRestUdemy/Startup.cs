@@ -1,6 +1,7 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Rewrite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -46,6 +47,23 @@ namespace WebApiRestUdemy
             services.AddSingleton(filterOptions);
 
             services.AddApiVersioning();
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1",
+                    new Microsoft.OpenApi.Models.OpenApiInfo
+                    {
+                         Title = "Rest Api .NET Core 5 and Docker",
+                         Version = "v1",
+                         Description =  "Api RestFull Developed in Course",
+                         Contact =  new Microsoft.OpenApi.Models.OpenApiContact
+                         {
+                             Name = "Lucas De Micco",
+                             Url = new Uri("https://github.com/lucasdemicco")
+                         }
+
+                    });
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -59,6 +77,17 @@ namespace WebApiRestUdemy
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json","Rest Api .NET Core 5 and Docker - v1");
+            });
+
+            var option = new RewriteOptions();
+            option.AddRedirect("^$", "swagger");
+            app.UseRewriter(option);
 
             app.UseAuthorization();
 
