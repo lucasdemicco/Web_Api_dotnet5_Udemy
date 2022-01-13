@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using WebApiRestUdemy.Data.VO;
 using WebApiRestUdemy.Hypermedia.Filters;
@@ -19,6 +20,9 @@ namespace WebApiRestUdemy.Controllers
         }
 
         [HttpGet]
+        [ProducesResponseType((200), Type = typeof(List<BookVO>))]
+        [ProducesResponseType((404))]
+        [ProducesResponseType((500))]
         [TypeFilter(typeof(HyperMediaFilter))]
         public async Task<ActionResult<BookVO>> FindAll()
         {
@@ -30,6 +34,9 @@ namespace WebApiRestUdemy.Controllers
         }
 
         [HttpGet("{id}")]
+        [ProducesResponseType((200), Type = typeof(PersonVO))]
+        [ProducesResponseType((404))]
+        [ProducesResponseType((500))]
         [TypeFilter(typeof(HyperMediaFilter))]
         public async Task<ActionResult<BookVO>> FindBookById(long id)
         {
@@ -41,6 +48,9 @@ namespace WebApiRestUdemy.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType((201), Type = typeof(PersonVO))]
+        [ProducesResponseType((404))]
+        [ProducesResponseType((500))]
         [TypeFilter(typeof(HyperMediaFilter))]
         public async Task<ActionResult<BookVO>> CreateNewBook(BookVO vo)
         {
@@ -51,6 +61,9 @@ namespace WebApiRestUdemy.Controllers
         }
 
         [HttpPut]
+        [ProducesResponseType((200), Type = typeof(PersonVO))]
+        [ProducesResponseType((404))]
+        [ProducesResponseType((500))]
         [TypeFilter(typeof(HyperMediaFilter))]
         public async Task<ActionResult<BookVO>> UpdateABook(BookVO vo)
         {
@@ -61,6 +74,9 @@ namespace WebApiRestUdemy.Controllers
         }
 
         [HttpDelete("{id}")]
+        [ProducesResponseType((204), Type = typeof(PersonVO))]
+        [ProducesResponseType((404))]
+        [ProducesResponseType((500))]
         public async Task<ActionResult> DeleteABook(long id)
         {
             var status = await _repo.Delete(id);

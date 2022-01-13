@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using WebApiRestUdemy.Data.VO;
 using WebApiRestUdemy.Hypermedia.Filters;
@@ -22,6 +23,9 @@ namespace WebApiRestUdemy.Controllers
 
 
         [HttpGet]
+        [ProducesResponseType((200), Type = typeof(List<PersonVO>))]
+        [ProducesResponseType((404))]
+        [ProducesResponseType((500))]
         [TypeFilter(typeof(HyperMediaFilter))]
         public async Task<ActionResult<PersonVO>> FindAll()
         {
@@ -33,6 +37,9 @@ namespace WebApiRestUdemy.Controllers
         }
 
         [HttpGet("{id}")]
+        [ProducesResponseType((200), Type = typeof(PersonVO))]
+        [ProducesResponseType((404))]
+        [ProducesResponseType((500))]
         [TypeFilter(typeof(HyperMediaFilter))]
         public async Task<ActionResult<PersonVO>> FindPersonById(long id)
         {
@@ -44,6 +51,9 @@ namespace WebApiRestUdemy.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType((201), Type = typeof(PersonVO))]
+        [ProducesResponseType((404))]
+        [ProducesResponseType((500))]
         [TypeFilter(typeof(HyperMediaFilter))]
         public async Task<ActionResult<PersonVO>> CreatePerson(PersonVO vo)
         {
@@ -54,6 +64,9 @@ namespace WebApiRestUdemy.Controllers
         }
 
         [HttpPut]
+        [ProducesResponseType((200), Type = typeof(PersonVO))]
+        [ProducesResponseType((404))]
+        [ProducesResponseType((500))]
         [TypeFilter(typeof(HyperMediaFilter))]
         public async Task<ActionResult<PersonVO>> UpdatePerson(PersonVO vo)
         {
@@ -64,6 +77,9 @@ namespace WebApiRestUdemy.Controllers
         }
 
         [HttpDelete("{id}")]
+        [ProducesResponseType((204), Type = typeof(PersonVO))]
+        [ProducesResponseType((404))]
+        [ProducesResponseType((500))]
         public async Task<ActionResult> DeletePerson(long id)
         {
             var status = await _repo.Delete(id);
