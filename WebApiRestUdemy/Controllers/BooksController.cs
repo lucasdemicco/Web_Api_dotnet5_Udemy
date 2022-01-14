@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ using WebApiRestUdemy.Repository;
 
 namespace WebApiRestUdemy.Controllers
 {
+    [Authorize(AuthenticationSchemes = "Bearer")]
     [ApiVersion("1")]
     [ApiController]
     [Route("/api/[controller]/v{version:apiVersion}")]
