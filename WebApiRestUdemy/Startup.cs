@@ -11,6 +11,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System;
+using System.Collections.Generic;
 using System.Text;
 using WebApiRestUdemy.Data;
 using WebApiRestUdemy.Data.Mapping;
@@ -89,8 +90,13 @@ namespace WebApiRestUdemy
 
             services.AddSwaggerGen(c =>
             {
+                var security = new Dictionary<string, IEnumerable<string>>
+                {
+                    {"Bearer", new string[] { }}
+                };
+
                 c.SwaggerDoc("v1",
-                    new Microsoft.OpenApi.Models.OpenApiInfo
+                    new OpenApiInfo
                     {
                         Title = "Rest Api .NET Core 5 and Docker",
                         Version = "v1",
