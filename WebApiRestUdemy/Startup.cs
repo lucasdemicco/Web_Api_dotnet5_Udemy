@@ -115,7 +115,6 @@ namespace WebApiRestUdemy
                     {
                         Name = "Authorization",
                         Type = SecuritySchemeType.ApiKey,
-                        Scheme = "Bearer",
                         BearerFormat = "JWT",
                         In = ParameterLocation.Header,
                         Description = "JWT Authorization header using the Bearer scheme."
@@ -132,7 +131,7 @@ namespace WebApiRestUdemy
                                 Id = "Bearer"
                             }
                         },
-                         new string[] {}
+                         new List<string>()
                     }
                 });
             });
