@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "prCuruRFsb+ciD8dDIR98MM5ECAA0EuRz1+ijZrve5zBKngyuJtW39yhV2aArRdd0Ozmr576tR3BEUhZ+n0rGQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\camil\\Desktop\\ProjetoUdemy\\Web_Api_dotnet5_Udemy\\WebApiRestUdemy\\UdemyApi.Domain\\UdemyApi.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\camil\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
+    "C:\\Users\\camil\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiRestUdemy", "WebApiRestUdemy\WebApiRestUdemy.csproj", "{4E1A7C86-02DE-49AE-802C-B4F83632BD01}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiRestUdemy", "WebApiRestUdemy\WebApiRestUdemy.csproj", "{4E1A7C86-02DE-49AE-802C-B4F83632BD01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyApi.Domain", "UdemyApi.Domain\UdemyApi.Domain.csproj", "{5AA4A5D6-D824-4DCA-B6C9-0A285402D48E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyApi.Application", "UdemyApi.Application\UdemyApi.Application.csproj", "{C06E5C83-17B6-4DC3-9056-C68053CD0E13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyApi.Infrastructure", "UdemyApi.Infrastructure\UdemyApi.Infrastructure.csproj", "{552EBC2B-0CAE-4B08-B853-00EF5C975976}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyApi.CrossCutting", "UdemyApi.CrossCutting\UdemyApi.CrossCutting.csproj", "{7AB99396-AA0F-490B-BD2D-95005C55D8E0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,22 @@ Global
 		{4E1A7C86-02DE-49AE-802C-B4F83632BD01}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E1A7C86-02DE-49AE-802C-B4F83632BD01}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E1A7C86-02DE-49AE-802C-B4F83632BD01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AA4A5D6-D824-4DCA-B6C9-0A285402D48E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AA4A5D6-D824-4DCA-B6C9-0A285402D48E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AA4A5D6-D824-4DCA-B6C9-0A285402D48E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AA4A5D6-D824-4DCA-B6C9-0A285402D48E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C06E5C83-17B6-4DC3-9056-C68053CD0E13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C06E5C83-17B6-4DC3-9056-C68053CD0E13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C06E5C83-17B6-4DC3-9056-C68053CD0E13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C06E5C83-17B6-4DC3-9056-C68053CD0E13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{552EBC2B-0CAE-4B08-B853-00EF5C975976}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{552EBC2B-0CAE-4B08-B853-00EF5C975976}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{552EBC2B-0CAE-4B08-B853-00EF5C975976}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{552EBC2B-0CAE-4B08-B853-00EF5C975976}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AB99396-AA0F-490B-BD2D-95005C55D8E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AB99396-AA0F-490B-BD2D-95005C55D8E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AB99396-AA0F-490B-BD2D-95005C55D8E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AB99396-AA0F-490B-BD2D-95005C55D8E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

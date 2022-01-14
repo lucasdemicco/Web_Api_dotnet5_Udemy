@@ -1,0 +1,12 @@
+C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.Domain\obj\Debug\net5.0\UdemyApi.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.Domain\obj\Debug\net5.0\UdemyApi.Domain.AssemblyInfoInputs.cache
+C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.Domain\obj\Debug\net5.0\UdemyApi.Domain.AssemblyInfo.cs
+C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.Domain\obj\Debug\net5.0\UdemyApi.Domain.csproj.CoreCompileInputs.cache
+C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.Domain\bin\Debug\net5.0\UdemyApi.Domain.deps.json
+C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.Domain\bin\Debug\net5.0\UdemyApi.Domain.dll
+C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.Domain\bin\Debug\net5.0\ref\UdemyApi.Domain.dll
+C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.Domain\bin\Debug\net5.0\UdemyApi.Domain.pdb
+C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.Domain\obj\Debug\net5.0\UdemyApi.Domain.dll
+C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.Domain\obj\Debug\net5.0\ref\UdemyApi.Domain.dll
+C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.Domain\obj\Debug\net5.0\UdemyApi.Domain.pdb
+C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.Domain\obj\Debug\net5.0\UdemyApi.Domain.csproj.AssemblyReference.cache

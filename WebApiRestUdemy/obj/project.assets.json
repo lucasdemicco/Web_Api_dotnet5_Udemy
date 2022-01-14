@@ -371,7 +371,7 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.ApiExplorer.dll": {}
         }
       },
-      "Microsoft.AspNetCore.Mvc.Core/2.2.0": {
+      "Microsoft.AspNetCore.Mvc.Core/2.2.5": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.Core": "2.2.0",
@@ -2643,6 +2643,65 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
+      },
+      "UdemyApi.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "AutoMapper": "11.0.0",
+          "Microsoft.AspNetCore.Mvc.Abstractions": "2.2.0",
+          "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
+          "UdemyApi.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/UdemyApi.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/UdemyApi.Application.dll": {}
+        }
+      },
+      "UdemyApi.CrossCutting/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "UdemyApi.Application": "1.0.0",
+          "UdemyApi.Domain": "1.0.0",
+          "UdemyApi.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/UdemyApi.CrossCutting.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/UdemyApi.CrossCutting.dll": {}
+        }
+      },
+      "UdemyApi.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "AutoMapper": "11.0.0"
+        },
+        "compile": {
+          "bin/placeholder/UdemyApi.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/UdemyApi.Domain.dll": {}
+        }
+      },
+      "UdemyApi.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.13",
+          "Pomelo.EntityFrameworkCore.MySql": "5.0.3",
+          "UdemyApi.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/UdemyApi.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/UdemyApi.Infrastructure.dll": {}
+        }
       }
     }
   },
@@ -3037,16 +3096,16 @@
         "microsoft.aspnetcore.mvc.apiexplorer.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Mvc.Core/2.2.0": {
-      "sha512": "ALiY4a6BYsghw8PT5+VU593Kqp911U3w9f/dH9/ZoI3ezDsDAGiObqPu/HP1oXK80Ceu0XdQ3F0bx5AXBeuN/Q==",
+    "Microsoft.AspNetCore.Mvc.Core/2.2.5": {
+      "sha512": "/8sr8ixIUD57UFwUntha9bOwex7/AkZfdk1f9oNJG1Ek7p/uuKVa7fuHmYZpQOf35Oxrt+2Ku4WPwMSbNxOuWg==",
       "type": "package",
-      "path": "microsoft.aspnetcore.mvc.core/2.2.0",
+      "path": "microsoft.aspnetcore.mvc.core/2.2.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Core.dll",
         "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Core.xml",
-        "microsoft.aspnetcore.mvc.core.2.2.0.nupkg.sha512",
+        "microsoft.aspnetcore.mvc.core.2.2.5.nupkg.sha512",
         "microsoft.aspnetcore.mvc.core.nuspec"
       ]
     },
@@ -8015,6 +8074,26 @@
         "system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xdocument.nuspec"
       ]
+    },
+    "UdemyApi.Application/1.0.0": {
+      "type": "project",
+      "path": "../UdemyApi.Application/UdemyApi.Application.csproj",
+      "msbuildProject": "../UdemyApi.Application/UdemyApi.Application.csproj"
+    },
+    "UdemyApi.CrossCutting/1.0.0": {
+      "type": "project",
+      "path": "../UdemyApi.CrossCutting/UdemyApi.CrossCutting.csproj",
+      "msbuildProject": "../UdemyApi.CrossCutting/UdemyApi.CrossCutting.csproj"
+    },
+    "UdemyApi.Domain/1.0.0": {
+      "type": "project",
+      "path": "../UdemyApi.Domain/UdemyApi.Domain.csproj",
+      "msbuildProject": "../UdemyApi.Domain/UdemyApi.Domain.csproj"
+    },
+    "UdemyApi.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../UdemyApi.Infrastructure/UdemyApi.Infrastructure.csproj",
+      "msbuildProject": "../UdemyApi.Infrastructure/UdemyApi.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -8025,7 +8104,6 @@
       "Microsoft.AspNetCore.Mvc >= 2.2.0",
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 5.0.13",
       "Microsoft.AspNetCore.Mvc.Versioning >= 5.0.0",
-      "Microsoft.EntityFrameworkCore >= 5.0.13",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.13",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.13",
       "Microsoft.Extensions.DependencyInjection >= 6.0.0",
@@ -8033,7 +8111,8 @@
       "Pomelo.EntityFrameworkCore.MySql >= 5.0.3",
       "Swashbuckle.AspNetCore >= 6.2.3",
       "Swashbuckle.AspNetCore.SwaggerGen >= 6.2.3",
-      "Swashbuckle.AspNetCore.SwaggerUI >= 6.2.3"
+      "Swashbuckle.AspNetCore.SwaggerUI >= 6.2.3",
+      "UdemyApi.CrossCutting >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -8062,7 +8141,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\camil\\Desktop\\ProjetoUdemy\\Web_Api_dotnet5_Udemy\\WebApiRestUdemy\\UdemyApi.CrossCutting\\UdemyApi.CrossCutting.csproj": {
+              "projectPath": "C:\\Users\\camil\\Desktop\\ProjetoUdemy\\Web_Api_dotnet5_Udemy\\WebApiRestUdemy\\UdemyApi.CrossCutting\\UdemyApi.CrossCutting.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -8098,10 +8181,6 @@
           "Microsoft.AspNetCore.Mvc.Versioning": {
             "target": "Package",
             "version": "[5.0.0, )"
-          },
-          "Microsoft.EntityFrameworkCore": {
-            "target": "Package",
-            "version": "[5.0.13, )"
           },
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",

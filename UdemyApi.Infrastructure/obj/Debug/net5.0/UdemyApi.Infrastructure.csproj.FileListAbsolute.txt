@@ -1,0 +1,15 @@
+C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.Infrastructure\obj\Debug\net5.0\UdemyApi.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.Infrastructure\obj\Debug\net5.0\UdemyApi.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.Infrastructure\obj\Debug\net5.0\UdemyApi.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.Infrastructure\obj\Debug\net5.0\UdemyApi.Infrastructure.AssemblyInfo.cs
+C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.Infrastructure\obj\Debug\net5.0\UdemyApi.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.Infrastructure\bin\Debug\net5.0\UdemyApi.Infrastructure.deps.json
+C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.Infrastructure\bin\Debug\net5.0\UdemyApi.Infrastructure.dll
+C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.Infrastructure\bin\Debug\net5.0\ref\UdemyApi.Infrastructure.dll
+C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.Infrastructure\bin\Debug\net5.0\UdemyApi.Infrastructure.pdb
+C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.Infrastructure\bin\Debug\net5.0\UdemyApi.Domain.dll
+C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.Infrastructure\bin\Debug\net5.0\UdemyApi.Domain.pdb
+C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.Infrastructure\obj\Debug\net5.0\UdemyApi.Infrastructure.csproj.CopyComplete
+C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.Infrastructure\obj\Debug\net5.0\UdemyApi.Infrastructure.dll
+C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.Infrastructure\obj\Debug\net5.0\ref\UdemyApi.Infrastructure.dll
+C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.Infrastructure\obj\Debug\net5.0\UdemyApi.Infrastructure.pdb

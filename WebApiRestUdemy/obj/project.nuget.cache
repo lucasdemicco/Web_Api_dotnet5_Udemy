@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "cWbDDVuLXkSN0KWzcXV9DaIFH1nIfB9uTnnNbmNIWOaKg5mSjGnSTOXFNhHTSWOJeGJPfKsph2fAuBhwFuBevQ==",
+  "dgSpecHash": "zJUDdBtnbv40tnYyOvOaFrmA+YvloQZp27XRpu1u72lVsNJLcADwK5Yi2KaJ9o4A7L9nxILVV+dk/GRpz6EKlg==",
   "success": true,
   "projectFilePath": "C:\\Users\\camil\\Desktop\\ProjetoUdemy\\Web_Api_dotnet5_Udemy\\WebApiRestUdemy\\WebApiRestUdemy\\WebApiRestUdemy.csproj",
   "expectedPackageFiles": [
@@ -32,7 +32,7 @@
     "C:\\Users\\camil\\.nuget\\packages\\microsoft.aspnetcore.mvc.abstractions\\2.2.0\\microsoft.aspnetcore.mvc.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\camil\\.nuget\\packages\\microsoft.aspnetcore.mvc.analyzers\\2.2.0\\microsoft.aspnetcore.mvc.analyzers.2.2.0.nupkg.sha512",
     "C:\\Users\\camil\\.nuget\\packages\\microsoft.aspnetcore.mvc.apiexplorer\\2.2.0\\microsoft.aspnetcore.mvc.apiexplorer.2.2.0.nupkg.sha512",
-    "C:\\Users\\camil\\.nuget\\packages\\microsoft.aspnetcore.mvc.core\\2.2.0\\microsoft.aspnetcore.mvc.core.2.2.0.nupkg.sha512",
+    "C:\\Users\\camil\\.nuget\\packages\\microsoft.aspnetcore.mvc.core\\2.2.5\\microsoft.aspnetcore.mvc.core.2.2.5.nupkg.sha512",
     "C:\\Users\\camil\\.nuget\\packages\\microsoft.aspnetcore.mvc.cors\\2.2.0\\microsoft.aspnetcore.mvc.cors.2.2.0.nupkg.sha512",
     "C:\\Users\\camil\\.nuget\\packages\\microsoft.aspnetcore.mvc.dataannotations\\2.2.0\\microsoft.aspnetcore.mvc.dataannotations.2.2.0.nupkg.sha512",
     "C:\\Users\\camil\\.nuget\\packages\\microsoft.aspnetcore.mvc.formatters.json\\2.2.0\\microsoft.aspnetcore.mvc.formatters.json.2.2.0.nupkg.sha512",

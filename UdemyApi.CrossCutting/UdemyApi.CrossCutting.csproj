@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\UdemyApi.Application\UdemyApi.Application.csproj" />
+    <ProjectReference Include="..\UdemyApi.Domain\UdemyApi.Domain.csproj" />
+    <ProjectReference Include="..\UdemyApi.Infrastructure\UdemyApi.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
