@@ -1,12 +1,17 @@
 using AutoMapper;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Rewrite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using System;
+using System.Text;
 using WebApiRestUdemy.Data;
 using WebApiRestUdemy.Data.Mapping;
 using WebApiRestUdemy.Hypermedia.Enricher;
@@ -29,6 +34,13 @@ namespace WebApiRestUdemy
         {
             var connection = Configuration.GetConnectionString("MySqlConnection");
 
+            services.AddControllers()
+                .AddNewtonsoftJson(options =>
+            {
+                options.SerializerSettings.ReferenceLoopHandling
+                = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+            });
+
             services.AddCors(options =>
             {
                 options.AddDefaultPolicy(builder =>
@@ -39,13 +51,30 @@ namespace WebApiRestUdemy
                 });
             });
 
-            services.AddControllers();
-
             services.AddScoped<IPersonRepository, PersonRepository>();
             services.AddScoped<IBookRepository, BookRepository>();
 
             services.AddDbContext<DataContext>(options =>
-                options.UseMySql(connection,ServerVersion.AutoDetect(connection)));
+                options.UseMySql(connection, ServerVersion.AutoDetect(connection)));
+
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                .AddEntityFrameworkStores<DataContext>()
+                .AddDefaultTokenProviders();
+
+            services.AddAuthentication(
+                JwtBearerDefaults.AuthenticationScheme).
+                AddJwtBearer(options =>
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidAudience = Configuration["TokenConfiguration:Audience"],
+                    ValidIssuer = Configuration["TokenConfiguration:Issuer"],
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(
+                        Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
+                });
 
             IMapper mapper = MappingConfig.RegisterMaps().CreateMapper();
             services.AddSingleton(mapper);
@@ -63,17 +92,44 @@ namespace WebApiRestUdemy
                 c.SwaggerDoc("v1",
                     new Microsoft.OpenApi.Models.OpenApiInfo
                     {
-                         Title = "Rest Api .NET Core 5 and Docker",
-                         Version = "v1",
-                         Description =  "Api RestFull Developed in Course",
-                         Contact =  new Microsoft.OpenApi.Models.OpenApiContact
-                         {
-                             Name = "Lucas De Micco",
-                             Url = new Uri("https://github.com/lucasdemicco")
-                         }
+                        Title = "Rest Api .NET Core 5 and Docker",
+                        Version = "v1",
+                        Description = "Api RestFull Developed in Course",
+                        Contact = new Microsoft.OpenApi.Models.OpenApiContact
+                        {
+                            Name = "Lucas De Micco",
+                            Url = new Uri("https://github.com/lucasdemicco")
+                        }
 
                     });
+
+                c.AddSecurityDefinition(
+                    "Bearer",
+                    new Microsoft.OpenApi.Models.OpenApiSecurityScheme
+                    {
+                        Name = "Authorization",
+                        Type = Microsoft.OpenApi.Models.SecuritySchemeType.ApiKey,
+                        Scheme = "Bearer",
+                        BearerFormat = "JWT",
+                        In = Microsoft.OpenApi.Models.ParameterLocation.Header,
+                        Description = "JWT Authorization header using the Bearer scheme."
+                    });
+
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                   {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            }
+                        },
+                         new string[] {}
+                    }
                 });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -94,7 +150,7 @@ namespace WebApiRestUdemy
 
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json","Rest Api .NET Core 5 and Docker - v1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Rest Api .NET Core 5 and Docker - v1");
             });
 
             var option = new RewriteOptions();
