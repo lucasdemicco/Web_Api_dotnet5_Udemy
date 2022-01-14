@@ -111,17 +111,17 @@ namespace WebApiRestUdemy
 
                 c.AddSecurityDefinition(
                     "Bearer",
-                    new Microsoft.OpenApi.Models.OpenApiSecurityScheme
+                    new OpenApiSecurityScheme
                     {
                         Name = "Authorization",
-                        Type = Microsoft.OpenApi.Models.SecuritySchemeType.ApiKey,
+                        Type = SecuritySchemeType.ApiKey,
                         Scheme = "Bearer",
                         BearerFormat = "JWT",
-                        In = Microsoft.OpenApi.Models.ParameterLocation.Header,
+                        In = ParameterLocation.Header,
                         Description = "JWT Authorization header using the Bearer scheme."
                     });
 
-                c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement()
                 {
                    {
                         new OpenApiSecurityScheme
