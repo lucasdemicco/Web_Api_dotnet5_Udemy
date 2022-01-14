@@ -21,6 +21,10 @@ namespace WebApiRestUdemy.Controllers
             _repo = repo ?? throw new ArgumentNullException(nameof(repo));
         }
 
+        /// <summary>
+        /// Obtém toda a lista de livros
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [ProducesResponseType((200), Type = typeof(List<BookVO>))]
         [ProducesResponseType((404))]
@@ -35,6 +39,11 @@ namespace WebApiRestUdemy.Controllers
             return Ok(books);
         }
 
+        /// <summary>
+        /// Obtém um livo pelo identificador
+        /// </summary>
+        /// <param name="id">Identificador</param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         [ProducesResponseType((200), Type = typeof(PersonVO))]
         [ProducesResponseType((404))]
@@ -49,6 +58,11 @@ namespace WebApiRestUdemy.Controllers
             return Ok(book);
         }
 
+        /// <summary>
+        /// Adiciona um novo registro
+        /// </summary>
+        /// <param name="vo"></param>
+        /// <returns></returns>
         [HttpPost]
         [ProducesResponseType((201), Type = typeof(PersonVO))]
         [ProducesResponseType((404))]
@@ -62,6 +76,11 @@ namespace WebApiRestUdemy.Controllers
             return Ok(bookCreate);
         }
 
+        /// <summary>
+        /// Atualiza o registro selecionado
+        /// </summary>
+        /// <param name="vo"></param>
+        /// <returns></returns>
         [HttpPut]
         [ProducesResponseType((200), Type = typeof(PersonVO))]
         [ProducesResponseType((404))]
@@ -75,6 +94,11 @@ namespace WebApiRestUdemy.Controllers
             return Ok(bookUpdate);
         }
 
+        /// <summary>
+        /// Apaga o registro pelo seu identificador
+        /// </summary>
+        /// <param name="id">Identificador</param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         [ProducesResponseType((204), Type = typeof(PersonVO))]
         [ProducesResponseType((404))]

@@ -33,6 +33,11 @@ namespace WebApiRestUdemy.Controllers
             _configuration = configuration;
         }
 
+        /// <summary>
+        /// Registrar novo usuário
+        /// </summary>
+        /// <param name="vo"></param>
+        /// <returns></returns>
         [HttpPost("register")]
         public async Task<ActionResult> RegisterUser(UserVO vo)
         {
@@ -55,6 +60,11 @@ namespace WebApiRestUdemy.Controllers
 
         }
 
+        /// <summary>
+        /// Realizar autenticação 
+        /// </summary>
+        /// <param name="userInfo"></param>
+        /// <returns></returns>
         [HttpPost("login")]
         public async Task<ActionResult> Login(UserVO userInfo)
         {
