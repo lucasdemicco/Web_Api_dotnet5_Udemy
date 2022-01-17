@@ -1,0 +1,104 @@
+services:
+  WebApiRestUdemy:
+    build:
+      context: C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy
+      dockerfile: WebApiRestUdemy/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: WebApiRestUdemy
+      target: base
+    container_name: restudemy.api
+    depends_on:
+      database:
+        condition: service_started
+    entrypoint:
+    - tail
+    - -f
+    - /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      DOTNET_USE_POLLING_FILE_WATCHER: "1"
+      NUGET_FALLBACK_PACKAGES: ""
+    image: apimysqldocker:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages  "/app/bin/Debug/net5.0/WebApiRestUdemy.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      protocol: tcp
+    - mode: ingress
+      target: 80
+      published: 5000
+      protocol: tcp
+    restart: always
+    tty: true
+    volumes:
+    - type: bind
+      source: C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\WebApiRestUdemy
+      target: /app
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy
+      target: /src
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\camil\vsdbg\vs2017u5
+      target: /remote_debugger
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\camil\.nuget\packages\
+      target: /root/.nuget/packages
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\camil\AppData\Roaming/ASP.NET/Https
+      target: /root/.aspnet/https
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\camil\AppData\Roaming/Microsoft/UserSecrets
+      target: /root/.microsoft/usersecrets
+      read_only: true
+      bind:
+        create_host_path: true
+  database:
+    container_name: mysqldb
+    environment:
+      MYSQL_DATABASE: rest_api_net_udemy
+      MYSQL_PASSWORD: root
+      MYSQL_RANDOM_ROOT_PASSWORD: "1"
+      MYSQL_USER: root
+    expose:
+    - "3306"
+    image: mysql
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 3306
+      published: 3306
+      protocol: tcp
+    restart: always
+    volumes:
+    - type: volume
+      source: dbmysql-volume
+      target: /var/lib/mysql
+      volume: {}
+networks:
+  default:
+    name: dockercompose2573074267111121579_default
+volumes:
+  dbmysql-volume:
+    name: dockercompose2573074267111121579_dbmysql-volume

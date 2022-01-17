@@ -6,11 +6,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebApiRestUdemy.Data;
 
-namespace WebApiRestUdemy.Migrations
+namespace UdemyApi.Infrastructure.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20220114124547_Identity")]
-    partial class Identity
+    [Migration("20220117201200_identity")]
+    partial class identity
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -22,7 +22,7 @@ namespace WebApiRestUdemy.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("varchar(95)");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
@@ -59,7 +59,7 @@ namespace WebApiRestUdemy.Migrations
 
                     b.Property<string>("RoleId")
                         .IsRequired()
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("varchar(95)");
 
                     b.HasKey("Id");
 
@@ -71,7 +71,7 @@ namespace WebApiRestUdemy.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser", b =>
                 {
                     b.Property<string>("Id")
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("varchar(95)");
 
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
@@ -91,7 +91,7 @@ namespace WebApiRestUdemy.Migrations
                         .HasColumnType("tinyint(1)");
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime");
 
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256)
@@ -146,7 +146,7 @@ namespace WebApiRestUdemy.Migrations
 
                     b.Property<string>("UserId")
                         .IsRequired()
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("varchar(95)");
 
                     b.HasKey("Id");
 
@@ -158,17 +158,17 @@ namespace WebApiRestUdemy.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("varchar(95)");
 
                     b.Property<string>("ProviderKey")
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("varchar(95)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("longtext");
 
                     b.Property<string>("UserId")
                         .IsRequired()
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("varchar(95)");
 
                     b.HasKey("LoginProvider", "ProviderKey");
 
@@ -180,10 +180,10 @@ namespace WebApiRestUdemy.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
                 {
                     b.Property<string>("UserId")
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("varchar(95)");
 
                     b.Property<string>("RoleId")
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("varchar(95)");
 
                     b.HasKey("UserId", "RoleId");
 
@@ -195,13 +195,13 @@ namespace WebApiRestUdemy.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
                     b.Property<string>("UserId")
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("varchar(95)");
 
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("varchar(95)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("varchar(95)");
 
                     b.Property<string>("Value")
                         .HasColumnType("longtext");
@@ -211,7 +211,7 @@ namespace WebApiRestUdemy.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("WebApiRestUdemy.Model.Book", b =>
+            modelBuilder.Entity("UdemyApi.Domain.Model.Book", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -223,7 +223,7 @@ namespace WebApiRestUdemy.Migrations
                         .HasColumnName("author");
 
                     b.Property<DateTime>("LaunchDate")
-                        .HasColumnType("datetime(6)")
+                        .HasColumnType("datetime")
                         .HasColumnName("launch_date");
 
                     b.Property<decimal>("Price")
@@ -239,7 +239,7 @@ namespace WebApiRestUdemy.Migrations
                     b.ToTable("books");
                 });
 
-            modelBuilder.Entity("WebApiRestUdemy.Model.Person", b =>
+            modelBuilder.Entity("UdemyApi.Domain.Model.Person", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()

@@ -1,0 +1,51 @@
+services:
+  WebApiRestUdemy:
+    build:
+      context: C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy
+      dockerfile: WebApiRestUdemy/Dockerfile
+    container_name: restudemy.api
+    depends_on:
+      database:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: apimysqldocker
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      protocol: tcp
+    - mode: ingress
+      target: 80
+      published: 5000
+      protocol: tcp
+    restart: always
+  database:
+    container_name: mysqldb
+    environment:
+      MYSQL_DATABASE: rest_api_net_udemy
+      MYSQL_PASSWORD: root
+      MYSQL_RANDOM_ROOT_PASSWORD: "1"
+    expose:
+    - "3306"
+    image: mysql
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 3306
+      published: 3306
+      protocol: tcp
+    restart: always
+    volumes:
+    - type: volume
+      source: dbmysql-volume
+      target: /var/lib/mysql
+      volume: {}
+networks:
+  default:
+    name: dockercompose2573074267111121579_default
+volumes:
+  dbmysql-volume:
+    name: dockercompose2573074267111121579_dbmysql-volume

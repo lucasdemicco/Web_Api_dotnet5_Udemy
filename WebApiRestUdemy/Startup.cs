@@ -36,6 +36,7 @@ namespace WebApiRestUdemy
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
             var connection = Configuration.GetConnectionString("MySqlConnection");
 
             services.AddControllers()
@@ -59,7 +60,8 @@ namespace WebApiRestUdemy
             services.AddScoped<IBookRepository, BookRepository>();
 
             services.AddDbContext<DataContext>(options =>
-                options.UseMySql(connection, ServerVersion.AutoDetect(connection)));
+                options.UseMySql(connection, new MySqlServerVersion(new Version()),
+                options => options.EnableRetryOnFailure()));
 
             services.AddIdentity<IdentityUser, IdentityRole>()
                 .AddEntityFrameworkStores<DataContext>()

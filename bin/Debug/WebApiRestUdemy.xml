@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebApiRestUdemy</name>
+    </assembly>
+    <members>
+        <member name="M:WebApiRestUdemy.Controllers.AuthenticationController.RegisterUser(WebApiRestUdemy.Data.VO.UserVO)">
+            <summary>
+            Registrar novo usuário
+            </summary>
+            <param name="vo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiRestUdemy.Controllers.AuthenticationController.Login(WebApiRestUdemy.Data.VO.UserVO)">
+            <summary>
+            Realizar autenticação 
+            </summary>
+            <param name="userInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiRestUdemy.Controllers.BooksController.FindAll">
+            <summary>
+            Obtém toda a lista de livros
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiRestUdemy.Controllers.BooksController.FindBookById(System.Int64)">
+            <summary>
+            Obtém um livo pelo identificador
+            </summary>
+            <param name="id">Identificador</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiRestUdemy.Controllers.BooksController.CreateNewBook(WebApiRestUdemy.Data.VO.BookVO)">
+            <summary>
+            Adiciona um novo registro
+            </summary>
+            <param name="vo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiRestUdemy.Controllers.BooksController.UpdateABook(WebApiRestUdemy.Data.VO.BookVO)">
+            <summary>
+            Atualiza o registro selecionado
+            </summary>
+            <param name="vo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiRestUdemy.Controllers.BooksController.DeleteABook(System.Int64)">
+            <summary>
+            Apaga o registro pelo seu identificador
+            </summary>
+            <param name="id">Identificador</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiRestUdemy.Controllers.PersonController.FindAll">
+            <summary>
+            Lista todos as pessoas
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiRestUdemy.Controllers.PersonController.FindPersonById(System.Int64)">
+            <summary>
+            Seleciona a pessoa pelo seu identificador
+            </summary>
+            <param name="id">Identificador</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiRestUdemy.Controllers.PersonController.CreatePerson(WebApiRestUdemy.Data.VO.PersonVO)">
+            <summary>
+            Adiciona uma nova pessoa
+            </summary>
+            <param name="vo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiRestUdemy.Controllers.PersonController.UpdatePerson(WebApiRestUdemy.Data.VO.PersonVO)">
+            <summary>
+            Atualiza a pessoa selecionada
+            </summary>
+            <param name="vo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiRestUdemy.Controllers.PersonController.DeletePerson(System.Int64)">
+            <summary>
+            Apaga a pessoa pelo identificador
+            </summary>
+            <param name="id">Identificador</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

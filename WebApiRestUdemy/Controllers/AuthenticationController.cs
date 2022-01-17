@@ -10,7 +10,6 @@ using System.Text;
 using System.Threading.Tasks;
 using UdemyApi.Domain.Model;
 using WebApiRestUdemy.Data.VO;
-using WebApiRestUdemy.Model;
 
 namespace WebApiRestUdemy.Controllers
 {

@@ -10,7 +10,62 @@
       "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
       "DisplayName": "Arquivos Diversos",
       "ColorIndex": -1
+    },
+    "5aa4a5d6-d824-4dca-b6c9-0a285402d48e": {
+      "ProjectGuid": "5aa4a5d6-d824-4dca-b6c9-0a285402d48e",
+      "DisplayName": "UdemyApi.Domain",
+      "ColorIndex": 1
+    },
+    "c06e5c83-17b6-4dc3-9056-c68053cd0e13": {
+      "ProjectGuid": "c06e5c83-17b6-4dc3-9056-c68053cd0e13",
+      "DisplayName": "UdemyApi.Application",
+      "ColorIndex": 2
+    },
+    "552ebc2b-0cae-4b08-b853-00ef5c975976": {
+      "ProjectGuid": "552ebc2b-0cae-4b08-b853-00ef5c975976",
+      "DisplayName": "UdemyApi.Infrastructure",
+      "ColorIndex": 3
+    },
+    "56841d26-a5e1-47cc-a494-a5cab5afe90d": {
+      "ProjectGuid": "56841d26-a5e1-47cc-a494-a5cab5afe90d",
+      "DisplayName": "UDemyApi.CrossCuting",
+      "ColorIndex": 4
+    },
+    "7ab99396-aa0f-490b-bd2d-95005c55d8e0": {
+      "ProjectGuid": "7ab99396-aa0f-490b-bd2d-95005c55d8e0",
+      "DisplayName": "UdemyApi.CrossCutting",
+      "ColorIndex": 5
+    },
+    "ae876df4-0594-4ebc-9342-b0f1f9db42f6": {
+      "ProjectGuid": "ae876df4-0594-4ebc-9342-b0f1f9db42f6",
+      "DisplayName": "UdemyApiTeste",
+      "ColorIndex": 6
+    },
+    "19a651e2-5a9e-4e09-bdd7-7c65d6276e2a": {
+      "ProjectGuid": "19a651e2-5a9e-4e09-bdd7-7c65d6276e2a",
+      "DisplayName": "docker-compose",
+      "ColorIndex": 7
+    },
+    "05719699-3d4d-45fa-9e26-84155bd882ec": {
+      "ProjectGuid": "05719699-3d4d-45fa-9e26-84155bd882ec",
+      "DisplayName": "docker-compose",
+      "ColorIndex": 8
+    },
+    "96162e8d-52d4-4259-8c32-bf0197978a82": {
+      "ProjectGuid": "96162e8d-52d4-4259-8c32-bf0197978a82",
+      "DisplayName": "docker-compose",
+      "ColorIndex": 9
+    },
+    "637c4c45-be67-4664-b293-31024400700e": {
+      "ProjectGuid": "637c4c45-be67-4664-b293-31024400700e",
+      "DisplayName": "docker-compose",
+      "ColorIndex": 10
+    },
+    "0e29c4bb-90f2-4e7e-b43a-e99196e324b2": {
+      "ProjectGuid": "0e29c4bb-90f2-4e7e-b43a-e99196e324b2",
+      "DisplayName": "docker-compose",
+      "ColorIndex": 11
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 12
 }

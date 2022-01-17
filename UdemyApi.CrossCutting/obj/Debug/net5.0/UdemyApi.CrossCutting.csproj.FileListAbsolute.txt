@@ -1,8 +1,3 @@
-C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.CrossCutting\obj\Debug\net5.0\UdemyApi.CrossCutting.csproj.AssemblyReference.cache
-C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.CrossCutting\obj\Debug\net5.0\UdemyApi.CrossCutting.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.CrossCutting\obj\Debug\net5.0\UdemyApi.CrossCutting.AssemblyInfoInputs.cache
-C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.CrossCutting\obj\Debug\net5.0\UdemyApi.CrossCutting.AssemblyInfo.cs
-C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.CrossCutting\obj\Debug\net5.0\UdemyApi.CrossCutting.csproj.CoreCompileInputs.cache
 C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.CrossCutting\bin\Debug\net5.0\UdemyApi.CrossCutting.deps.json
 C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.CrossCutting\bin\Debug\net5.0\UdemyApi.CrossCutting.dll
 C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.CrossCutting\bin\Debug\net5.0\ref\UdemyApi.CrossCutting.dll
@@ -13,6 +8,11 @@ C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyA
 C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.CrossCutting\bin\Debug\net5.0\UdemyApi.Application.pdb
 C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.CrossCutting\bin\Debug\net5.0\UdemyApi.Domain.pdb
 C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.CrossCutting\bin\Debug\net5.0\UdemyApi.Infrastructure.pdb
+C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.CrossCutting\obj\Debug\net5.0\UdemyApi.CrossCutting.csproj.AssemblyReference.cache
+C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.CrossCutting\obj\Debug\net5.0\UdemyApi.CrossCutting.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.CrossCutting\obj\Debug\net5.0\UdemyApi.CrossCutting.AssemblyInfoInputs.cache
+C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.CrossCutting\obj\Debug\net5.0\UdemyApi.CrossCutting.AssemblyInfo.cs
+C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.CrossCutting\obj\Debug\net5.0\UdemyApi.CrossCutting.csproj.CoreCompileInputs.cache
 C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.CrossCutting\obj\Debug\net5.0\UdemyApi.CrossCutting.csproj.CopyComplete
 C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.CrossCutting\obj\Debug\net5.0\UdemyApi.CrossCutting.dll
 C:\Users\camil\Desktop\ProjetoUdemy\Web_Api_dotnet5_Udemy\WebApiRestUdemy\UdemyApi.CrossCutting\obj\Debug\net5.0\ref\UdemyApi.CrossCutting.dll

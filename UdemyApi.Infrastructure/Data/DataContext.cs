@@ -8,7 +8,7 @@ namespace WebApiRestUdemy.Data
 {
     public class DataContext : IdentityDbContext
     {
-        public DataContext(DbContextOptions<DataContext> options) : base(options) { }
+        public DataContext(DbContextOptions<DataContext> options) : base(options) { this.Database.EnsureCreated(); }
 
         public DbSet<Person> Persons { get; set; }
         public DbSet<Book> Books { get; set; }
