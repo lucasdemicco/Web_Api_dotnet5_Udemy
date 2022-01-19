@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using UdemyApi.Domain.Model;
-using WebApiRestUdemy.Model;
 
 namespace WebApiRestUdemy.Data
 {
