@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Docker Login - AzureContainerRegistry
-        uses: Azure/docker@v1
+        uses: Azure/docker-login@v1
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
