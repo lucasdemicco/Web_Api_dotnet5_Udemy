@@ -19,7 +19,7 @@ jobs:
           login-server: ${{ secrets.DOCKER_CONTAINER_REGISTRY }}
     
       - name: Build Images
-        working-directory: https://github.com/lucasdemicco/Web_Api_dotnet5_Udemy
+        working-directory: ./
         run: docker-compose build
       
       - name: Push to Azure Container registry
